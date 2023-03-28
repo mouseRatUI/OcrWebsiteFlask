@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OCR WebApp</title> <!-- toto je nadpis v tabe -->
+
+    <!-- Style -->
+    <style>
+      body {
+        background-color: rgb(245, 245, 245);
+        margin-top: 50px;
+        margin-left: 150px;
+        margin-right: 150px;
+        padding: 150px;
+        color: #dfdddd;
+      }
+
+      h1   {
+        color: rgb(39, 39, 39);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align: center;
+        font-size: 500%;
+      }
+
+      h2 {
+        color: rgb(46, 46, 46);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+      }
+
+      p    {
+        color: rgb(46, 46, 46);
+      }
+
+      form{
+        color: rgb(46, 46, 46);
+        text-align: center;
+        font-size: 200%;
+        margin: 20px;
+        
+        
+      }
+
+      div{
+        padding: 100px;
+        border-radius: 15px;
+        background-color: rgb(250, 250, 250);
+        border-style: solid;
+        border-width: 1px; 
+        border-color: white;
+        
+        box-shadow: 1px 1px 15px rgba(36, 36, 36, 0.144);
+
+      }
+
+      
+
+
+
+    </style>
+    
+  </head>
+  <body>
+    
+    <h1>Character Recognition from images</h1> <!-- toto je nadpis stranky -->
+    <div>
+    <!-- form - select file a submit button app.py-->
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image">
+      <input class="button" type="submit" value="Run OCR">
+    </form>
+
+    <!-- Results -->
+    {% if text %}
+      <h2>Result:</h2>
+      <p>{{ text }}</p>
+    {% endif %}
+
+    </div>
+
+  </body>
+</html>
